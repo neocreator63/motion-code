@@ -129,6 +129,12 @@ p{font:500 15.5px/1.55 Inter}
 .s2 .grid b{width:8px;height:8px;background:#1C2A3A;display:block}.s2 .grid b.on{background:#8FA3B8}.s2 .grid b.e{background:#FF8A3D}
 .s3 .big{position:absolute;right:-6px;top:-18px;font:900 120px/1 Inter;letter-spacing:-.06em;color:var(--sig)}
 
+/* more */
+.more{margin-top:14px;background:#fff;padding:18px 20px;display:flex;flex-wrap:wrap;gap:12px 18px;align-items:center}
+.more div{display:flex;flex-wrap:wrap;gap:8px}
+.more b{font:800 15px Inter;letter-spacing:-.02em;padding:7px 11px 7px 26px;border:1.5px solid #111;position:relative}
+.more b:before{content:"";position:absolute;left:9px;top:50%;width:10px;height:10px;margin-top:-5px;background:var(--c)}
+
 /* calc */
 .calc{background:#fff;padding:26px 22px;display:grid;grid-template-columns:1fr;gap:26px}
 .field{margin-bottom:22px}
@@ -184,6 +190,27 @@ input[type=range]{width:100%;accent-color:var(--sig);height:28px}
 .ps.hot .btn .arrow{background:#fff;color:#111}
 .small{font:500 12.5px/1.5 Inter;color:var(--mute);margin-top:10px}
 .ps.hot .small{color:#ffe1d8}
+
+/* plate */
+.plate{background:#fff;display:grid;grid-template-columns:1fr;border-top:6px solid var(--sig)}
+.pl-left{padding:24px 20px;background:#F6F6F3}
+.pl-right{padding:24px 20px}
+.step{display:grid;grid-template-columns:44px 1fr;gap:10px;margin-bottom:18px}
+.sn{width:36px;height:36px;background:var(--ink);color:#fff;font:800 13px/36px Inter;text-align:center}
+.step h3{font:800 18px/1.25 Inter;margin:6px 0 4px}
+.sm{font:500 13.5px/1.5 Inter;color:#555}
+.bc{background:var(--ink);color:#fff;padding:16px 16px 14px;margin:0 0 10px;position:relative;overflow:hidden}
+.bc .bank{font:700 11px Inter;letter-spacing:.16em;text-transform:uppercase;color:#9a9a93;display:flex;justify-content:space-between;gap:8px}
+.bc .bank em{font-style:normal;color:var(--sig);letter-spacing:.08em}
+.bc .cnum{font:800 clamp(18px,5.4vw,24px)/1 Inter;letter-spacing:.04em;white-space:nowrap;margin:12px 0 6px;font-variant-numeric:tabular-nums}
+.bc .who{font:600 12px Inter;color:#bbb}
+.bc button{margin-top:12px;width:100%;height:44px;border:0;background:#fff;color:#111;font:800 12px Inter;letter-spacing:.1em;text-transform:uppercase;cursor:pointer}
+.bc button.ok,.word.ok{background:var(--sig);color:#fff}
+.word{display:flex;justify-content:space-between;align-items:center;width:100%;height:56px;border:2px dashed var(--sig);background:#FFF3EF;padding:0 16px;cursor:pointer;margin:8px 0 6px;color:#111}
+.word b{font:900 24px Inter;letter-spacing:-.02em}
+.word span{font:800 10px Inter;letter-spacing:.14em;text-transform:uppercase;color:var(--sig)}
+.btn.full{width:100%;justify-content:space-between}
+@media (min-width:860px){.plate{grid-template-columns:1fr 1fr}.pl-left,.pl-right{padding:34px}}
 
 /* faq */
 details{border-bottom:1px solid var(--line)}
@@ -267,7 +294,7 @@ footer .row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;m
   <div class="vert v-right">motion code · system of creation</div>
 </div>
 
-<div class="strip" aria-hidden="true"><div>10 этапов<span>/</span>3 авторских стиля<span>/</span>шаблоны промтов<span>/</span>телефон · планшет · ПК<span>/</span>без After Effects<span>/</span>10 этапов<span>/</span>3 авторских стиля<span>/</span>шаблоны промтов<span>/</span>телефон · планшет · ПК<span>/</span>без After Effects<span>/</span></div></div>
+<div class="strip" aria-hidden="true"><div>10 этапов<span>/</span>10 авторских стилей<span>/</span>монтаж своих видео<span>/</span>шаблоны промтов<span>/</span>телефон · планшет · ПК<span>/</span>без After Effects<span>/</span>10 этапов<span>/</span>10 авторских стилей<span>/</span>монтаж своих видео<span>/</span>шаблоны промтов<span>/</span>телефон · планшет · ПК<span>/</span>без After Effects<span>/</span></div></div>
 
 <!-- EXAMPLES -->
 <section id="examples">
@@ -277,7 +304,7 @@ footer .row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;m
       <div class="reel reveal"><div class="phone"><video src="media/rolik6.mp4" poster="media/rolik6.jpg" muted loop playsinline preload="none"></video></div><span class="snd">▶ нажми</span><div class="cap"><b>5 трюков казино, которые работают на тебе</b><span class="num">68 с</span></div></div>
       <div class="reel reveal"><div class="phone"><video src="media/rolik7.mp4" poster="media/rolik7.jpg" muted loop playsinline preload="none"></video></div><span class="snd">▶ нажми</span><div class="cap"><b>Твоё внимание — самый дорогой товар</b><span class="num">61 с</span></div></div>
       <div class="reel reveal"><div class="phone"><video src="media/rolik8.mp4" poster="media/rolik8.jpg" muted loop playsinline preload="none"></video></div><span class="snd">▶ нажми</span><div class="cap"><b>Что будет, если не спать 3 дня</b><span class="num">50 с</span></div></div>
-      <div class="reel reveal"><div class="phone"><video src="media/rolik1.mp4" poster="media/rolik1.jpg" muted loop playsinline preload="none"></video></div><span class="snd">▶ нажми</span><div class="cap"><b>Тебя замечают в 2 раза меньше, чем кажется</b><span class="num">60 с</span></div></div>
+      <div class="reel reveal"><div class="phone"><video src="media/rolik9.mp4" poster="media/rolik9.jpg" muted loop playsinline preload="none"></video></div><span class="snd">▶ нажми</span><div class="cap"><b>У тебя осталось меньше недель, чем ты думаешь</b><span class="num">44 с</span></div></div>
     </div>
     <div class="ex-note reveal"><a class="arrow" href="#how">↓</a><p style="font-size:14px;max-width:520px">Каждый ролик — от идеи до готового MP4 — собран ИИ по промтам из методички. Монтажная программа не открывалась ни разу.</p></div>
   </div>
@@ -295,7 +322,7 @@ footer .row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;m
     </div>
     <div class="pane on reveal">
       <div class="pain"><span class="lbl">сейчас</span><p>Клиенты хотят «как в залетевших роликах»: моушн, 3D, графику. А в After Effects это часы на каждый ролик — и цена, которую клиент не готов платить.</p></div>
-      <div class="gain"><span class="lbl">после методички</span><p>Новая услуга, которую делаешь за вечер, а не за неделю.</p><ul><li>моушн-ролик за 30–90 минут работы ИИ</li><li>твоё дело — задание, проверка, правки</li><li>готовые стили, чтобы ролики клиентов выглядели дорого</li></ul></div>
+      <div class="gain"><span class="lbl">после методички</span><p>Новая услуга, которую делаешь за вечер, а не за неделю.</p><ul><li>моушн-ролик за 30–90 минут работы ИИ</li><li>твоё дело — задание, проверка, правки</li><li>готовые стили, чтобы ролики клиентов выглядели дорого</li><li>плюс обычный монтаж клиентских видео: паузы, субтитры, инфографика</li></ul></div>
     </div>
     <div class="pane">
       <div class="pain"><span class="lbl">сейчас</span><p>Говорящая голова надоела и тебе, и зрителям. Монтажёр дорогой, а сам ты не дизайнер. Мысли есть — формата нет.</p></div>
@@ -354,6 +381,7 @@ footer .row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;m
       <li>Как не сжечь лимит подписки<span>бонус</span></li>
       <li>13 частых ошибок и решения<span>бонус</span></li>
       <li>Свой стиль из любого референса<span>бонус</span></li>
+      <li>Полноценный монтаж своих видео: паузы, субтитры, инфографика, подкасты<span>бонус</span></li>
       <li>Разделы для телефона, планшета и ПК<span>везде</span></li>
     </ul>
     <div class="styles">
@@ -361,6 +389,7 @@ footer .row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;m
       <div class="sty s2 reveal"><div class="grid" id="g"></div><div><span class="lbl" style="color:#FF8A3D">стиль 02 · кино</span></div><div><h3>хронос<em>.</em></h3><p>Кино-эпик о времени: гигантский масштаб, холодная сталь и одна оранжевая вспышка. Для мотивации.</p><div class="dots"><i style="background:#0B1018"></i><i style="background:#1C2A3A"></i><i style="background:#8FA3B8"></i><i style="background:#FF8A3D"></i></div></div></div>
       <div class="sty s3 reveal"><span class="big">01</span><div><span class="lbl" style="color:var(--sig)">стиль 03 · 2d</span></div><div><h3>постер<em>.</em></h3><p>Живой швейцарский плакат: огромная типографика и сетка. Самый быстрый и экономный — для фактов и клиентов.</p><div class="dots"><i style="background:#E9E9E6;border-color:#0002"></i><i style="background:#111"></i><i style="background:#F2542D"></i></div></div></div>
     </div>
+    <div class="more reveal"><span class="lbl">+ ещё 7 стилей</span><div><b style="--c:#2EE6D6">неон</b><b style="--c:#B23A2A">архив</b><b style="--c:#FFE14D">кинетик</b><b style="--c:#0F3B78">чертёж</b><b style="--c:#3BFF8A">терминал</b><b style="--c:#FF6FA1">коллаж</b><b style="--c:#1F3A2E">мел</b></div></div>
   </div>
 </section>
 
@@ -390,7 +419,7 @@ footer .row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;m
     <div class="sec-head reveal"><h2>автор<i>.</i></h2><span class="num">— 08</span></div>
     <div class="author reveal">
       <p class="q">Я 3 года занимаюсь монтажом. ИИ <i>сильно облегчил</i> мне работу — сейчас я делаю свои проекты. Эта методичка — моя рабочая система, без воды и без обещаний миллионов.</p>
-      <div class="facts"><div><b>3</b><span>года в монтаже</span></div><div><b>10</b><span>этапов</span></div><div><b>3</b><span>стиля</span></div></div>
+      <div class="facts"><div><b>3</b><span>года в монтаже</span></div><div><b>10</b><span>этапов</span></div><div><b>10</b><span>стилей</span></div></div>
     </div>
   </div>
 </section>
@@ -404,13 +433,15 @@ footer .row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;m
         <div class="tag-old" id="old">15 000 ₽</div>
         <div class="tag-old-cap">столько стоят курсы по ИИ-видео</div>
         <div class="tag-now"><span id="now">1 990</span><i>₽</i></div>
-        <p style="color:#bbb;max-width:380px">Один платёж. Методичка в PDF и 3 стиля остаются у тебя навсегда.</p>
+        <p style="color:#bbb;max-width:380px">Один платёж. Методичка в PDF и 10 стилей остаются у тебя навсегда.</p>
+        <div style="border-left:4px solid var(--sig);padding:4px 0 4px 14px;margin-top:20px;max-width:420px"><span class="lbl" style="color:var(--sig)">почему так дёшево?</span><p style="color:#ddd;font-size:14.5px;margin-top:6px">Это методичка, а не курс. Нет видеоуроков, кураторов и чатов — за них и платят 15 000+. Здесь только рабочая система и готовые промты: открыл и сделал.</p></div>
         <a class="btn" href="#pay" style="margin-top:24px">Купить<span class="arrow">→</span></a>
       </div>
       <ul class="incl reveal">
         <li>Методичка MOTION CODE — 10 этапов простым языком</li>
         <li>Все промты: запуск, сценарий, сборка, правки</li>
-        <li>3 авторских стиля: Манекен, Хронос, Постер</li>
+        <li>10 авторских стилей: от 3D-манекена до кинетической типографики</li>
+        <li>Полноценный монтаж своих видео: паузы, субтитры, инфографика</li>
         <li>Разделы для телефона, планшета и компьютера</li>
         <li>13 частых ошибок и готовые решения</li>
         <li>Как сделать свой стиль из любого ролика</li>
@@ -423,29 +454,19 @@ footer .row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;m
 <section id="pay">
   <div class="wrap">
     <div class="sec-head reveal"><h2>оплата<i>.</i></h2><span class="num">— 10</span></div>
-    <div class="pay">
-      <div class="ps reveal">
-        <span class="num">— 01</span>
-        <h3>Переведи по номеру карты</h3>
-        <p style="font-size:14px;color:#333">Из любого банка — по номеру карты или через СБП в приложении своего банка.</p>
-        <div class="card"><div class="bank" id="bank">Сбербанк</div><div class="cnum" id="cnum">2202 2085 5582 7717</div><div class="who" id="holder">Получатель: Rahmonov M.</div></div>
-        <button class="copy" id="copy">Скопировать номер</button>
-        <div id="sbp" style="display:none"><div class="card" style="margin-top:10px"><div class="bank">СБП · по номеру телефона</div><div class="cnum" id="sbpn"></div></div><button class="copy" id="copy2">Скопировать телефон</button></div>
-        <div class="sum"><span class="lbl">к оплате</span><b><span id="now2">1 990</span> ₽</b></div>
+    <div class="plate reveal">
+      <div class="pl-left">
+        <div class="step"><span class="sn">01</span><div><h3>Переведи <span id="now2">1 990</span> ₽ на любую карту</h3><p class="sm">Выбери удобный банк. Нажми «Скопировать» и вставь номер в приложении своего банка.</p></div></div>
+        <div id="cards"></div>
       </div>
-      <div class="ps reveal">
-        <span class="num">— 02</span>
-        <h3>Сделай скриншот</h3>
-        <p style="font-size:14px;color:#333">Сохрани скрин или чек об успешном переводе — на нём должны быть видны сумма и время.</p>
-        <div style="margin-top:22px;border:1.5px dashed #bdbdb6;height:150px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:6px">
-          <span style="font:900 40px Inter;color:var(--sig)">✓</span><span class="lbl">перевод выполнен</span></div>
-      </div>
-      <div class="ps hot reveal">
-        <span class="num">— 03</span>
-        <h3>Отправь скрин в директ</h3>
-        <p style="font-size:14px">Пришлю методичку и стили прямо в директ Instagram. Пришёл по кодовому слову — просто ответь скрином в той же переписке.</p>
-        <a class="btn" id="ig" href="https://ig.me/m/format_razuma" target="_blank" rel="noopener">Открыть директ<span class="arrow">→</span></a>
-        <p class="small">Отвечаю вручную, обычно в течение нескольких часов.</p>
+      <div class="pl-right">
+        <div class="step"><span class="sn">02</span><div><h3>В комментарии к переводу напиши</h3>
+          <button class="word" id="word"><b id="wtxt">монтаж</b><span>скопировать</span></button>
+          <p class="sm">Так я сразу найду твой платёж.</p></div></div>
+        <div class="step"><span class="sn">03</span><div><h3>Сделай скрин или сохрани чек</h3><p class="sm">На нём должны быть видны сумма и время перевода.</p></div></div>
+        <div class="step"><span class="sn">04</span><div><h3>Открой директ и отправь скрин</h3><p class="sm">Пришлю методичку и 10 стилей прямо в директ Instagram. Пришёл по кодовому слову — ответь скрином в той же переписке.</p></div></div>
+        <a class="btn full" id="ig" href="https://ig.me/m/format_razuma" target="_blank" rel="noopener">Открыть директ<span class="arrow">→</span></a>
+        <p class="sm" style="margin-top:10px">Отвечаю вручную, обычно в течение нескольких часов.</p>
       </div>
     </div>
   </div>
@@ -460,7 +481,9 @@ footer .row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;m
       <details><summary>Сколько нужно платить сверху?</summary><p>Нужна подписка Claude Pro (от $20 в месяц) — именно она собирает ролики. GitHub бесплатный. Озвучка — от 0 ₽, если записываешь своим голосом. Оплаты за каждую генерацию нет.</p></details>
       <details><summary>Я не монтажёр и не программист. Справлюсь?</summary><p>Да. Код пишет ИИ, ты его даже не видишь. Твоя часть — скопировать промт, загрузить озвучку и нажать пару кнопок. Каждый шаг расписан по нажатиям.</p></details>
       <details><summary>Можно делать реалистичные ролики с людьми?</summary><p>Сам метод — это моушн, графика и 3D. Реалистичные кадры генерируешь в видео-нейросети, а ИИ по методичке их монтирует, добавляет текст и переходы. Как это сделать — тоже внутри.</p></details>
-      <details><summary>На какие темы подходит?</summary><p>Психология, мотивация, дисциплина, факты, история, деньги, бизнес, экспертный контент, ролики для клиентов. Три стиля из бонуса закрывают большинство ниш.</p></details>
+      <details><summary>На какие темы подходит?</summary><p>Психология, мотивация, дисциплина, факты, история, деньги, бизнес, экспертный контент, ролики для клиентов. 10 стилей из бонуса закрывают большинство ниш.</p></details>
+      <details><summary>Почему так дёшево?</summary><p>Потому что это методичка, а не курс: без видеоуроков, кураторов и чатов поддержки. Ты получаешь саму систему — пошаговую инструкцию и готовые промты.</p></details>
+      <details><summary>Можно оплатить из-за рубежа?</summary><p>Да. Для перевода из другой страны есть карта Алиф Банка — она указана в блоке оплаты.</p></details>
       <details><summary>Как быстро я получу методичку?</summary><p>После того как пришлёшь скрин перевода в директ. Проверяю вручную, обычно в течение нескольких часов.</p></details>
       <details><summary>Это гарантирует, что ролики залетят?</summary><p>Нет — этого честно не гарантирует никто. Методичка даёт систему: хук, ритм, движение, регулярность. Дальше решают тема и постоянство.</p></details>
     </div>
@@ -477,30 +500,34 @@ footer .row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;m
 <script>
 /* ==== НАСТРОЙКИ: меняй только здесь ==== */
 const CFG={
-  price:"1 990",              // цена
-  oldPrice:"15 000 ₽",        // зачёркнутая цена
-  bank:"Сбербанк",
-  card:"2202 2085 5582 7717", // номер карты
-  holder:"Rahmonov M.",       // получатель
-  sbpPhone:"",                // телефон для СБП, например "+7 900 000-00-00" (пусто = блок скрыт)
-  instagram:"format_razuma"   // ник Instagram без @
+  price:"1 990",                 // цена
+  oldPrice:"15 000 ₽",           // зачёркнутая цена
+  comment:"монтаж",              // что писать в комментарии к переводу
+  instagram:"format_razuma",     // ник Instagram без @
+  cards:[                        // реквизиты: добавляй и удаляй строки
+    {bank:"Сбербанк", number:"2202 2085 5582 7717", holder:"Rahmonov M.", note:""},
+    {bank:"Т-Банк",   number:"2200 7021 7235 0196", holder:"Rahmonov M.", note:""},
+    {bank:"Алиф Банк",number:"4444 8888 1387 8950", holder:"Rahmonov M.", note:"из-за рубежа"}
+  ]
 };
 /* ======================================= */
 document.querySelectorAll('#now,#now2').forEach(e=>e.textContent=CFG.price);
 document.getElementById('old').textContent=CFG.oldPrice;
-document.getElementById('bank').textContent=CFG.bank;
-document.getElementById('cnum').textContent=CFG.card;
-document.getElementById('holder').textContent='Получатель: '+CFG.holder;
+document.getElementById('wtxt').textContent=CFG.comment;
 document.getElementById('ig').href='https://ig.me/m/'+CFG.instagram;
 document.getElementById('igf').href='https://instagram.com/'+CFG.instagram;
-if(CFG.sbpPhone){document.getElementById('sbp').style.display='block';document.getElementById('sbpn').textContent=CFG.sbpPhone}
-function copy(btn,text,label){
-  const done=()=>{btn.classList.add('ok');btn.textContent='Скопировано ✓';setTimeout(()=>{btn.classList.remove('ok');btn.textContent=label},2200)};
+function copy(btn,text,label,cb){
+  const done=()=>{btn.classList.add('ok');if(label)btn.textContent='Скопировано ✓';setTimeout(()=>{btn.classList.remove('ok');if(label)btn.textContent=label},2200)};
   if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(text).then(done,()=>fallback())}else fallback();
   function fallback(){const t=document.createElement('textarea');t.value=text;t.style.position='fixed';t.style.opacity='0';document.body.appendChild(t);t.select();try{document.execCommand('copy');done()}catch(e){}t.remove()}
 }
-document.getElementById('copy').onclick=e=>copy(e.target,CFG.card.replace(/\s/g,''),'Скопировать номер');
-document.getElementById('copy2').onclick=e=>copy(e.target,CFG.sbpPhone.replace(/[^\d+]/g,''),'Скопировать телефон');
+const box=document.getElementById('cards');
+CFG.cards.forEach(c=>{const d=document.createElement('div');d.className='bc';
+  d.innerHTML='<div class="bank"><span></span><em></em></div><div class="cnum"></div><div class="who"></div><button>Скопировать номер</button>';
+  d.querySelector('.bank span').textContent=c.bank;d.querySelector('.bank em').textContent=c.note||'';
+  d.querySelector('.cnum').textContent=c.number;d.querySelector('.who').textContent=c.holder?('Получатель: '+c.holder):'';
+  const b=d.querySelector('button');b.onclick=()=>copy(b,c.number.replace(/\s/g,''),'Скопировать номер');box.appendChild(d)});
+const w=document.getElementById('word');w.onclick=()=>{copy(w,CFG.comment);const sp=w.querySelector('span');sp.textContent='скопировано ✓';setTimeout(()=>sp.textContent='скопировать',2000)};
 
 /* tabs */
 const tabs=[...document.querySelectorAll('.tab')],panes=[...document.querySelectorAll('.pane')];

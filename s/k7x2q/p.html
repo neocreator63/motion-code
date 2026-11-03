@@ -1,0 +1,77 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>MOTION CODE — промты</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800;900&display=swap" rel="stylesheet">
+<style>*{box-sizing:border-box;margin:0}body{background:#ECECE9;color:#111;font-family:Inter,system-ui,sans-serif;padding:20px 16px 60px;max-width:760px;margin:0 auto}
+header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px}.wm{font:900 54px/.9 Inter;letter-spacing:-.06em}.wm i{font-style:normal;color:#F2542D}
+.lead{font:500 14px/1.5 Inter;color:#444;margin:10px 0 18px}article{background:#fff;margin:0 0 12px;padding:16px;scroll-margin-top:12px}article:target{outline:3px solid #F2542D}
+.h{display:flex;gap:10px;align-items:baseline;margin-bottom:10px}.n{font:800 11px Inter;color:#F2542D;letter-spacing:.1em}h2{font:800 16px/1.25 Inter}
+pre{white-space:pre-wrap;word-break:break-word;background:#111;color:#EFEFEA;padding:14px;font:12.5px/1.5 ui-monospace,Menlo,Consolas,monospace;border-left:5px solid #F2542D;max-height:340px;overflow:auto}
+button{margin-top:10px;width:100%;height:50px;border:0;background:#111;color:#fff;font:800 13px Inter;letter-spacing:.1em;text-transform:uppercase;cursor:pointer}button.ok{background:#F2542D}
+nav{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px}nav a{font:700 11px Inter;text-decoration:none;color:#111;border:1.5px solid #111;padding:6px 8px}</style></head><body>
+<header><div class="wm">prompts<i>.</i></div><span style="font:700 10px Inter;letter-spacing:.18em">MOTION CODE</span></header>
+<p class="lead">Все промты из методички. Нажми «Скопировать» и вставь в Claude. Текст в [квадратных скобках] замени на своё.</p>
+<nav><a href="#p1">01</a><a href="#p2">02</a><a href="#p3">03</a><a href="#p4">04</a><a href="#p5">05</a><a href="#p6">06</a><a href="#p7">07</a><a href="#p8">08</a><a href="#p9">09</a><a href="#p10">10</a><a href="#p11">11</a><a href="#p12">12</a><a href="#p13">13</a><a href="#p14">14</a><a href="#p15">15</a><a href="#p16">16</a><a href="#p17">17</a><a href="#p18">18</a><a href="#p19">19</a></nav>
+<article id="p1"><div class="h"><span class="n">01</span><h2>Setup Script</h2></div><pre>#!/bin/bash
+# MOTION CODE: подготовка среды
+S=&quot;&quot;; [ &quot;$(id -u)&quot; != &quot;0&quot; ] &amp;&amp; S=&quot;sudo&quot;
+$S apt-get update -y &gt;/dev/null 2&gt;&amp;1
+$S apt-get install -y ffmpeg fonts-noto-core \
+  &gt;/dev/null 2&gt;&amp;1 || true
+pip install -q --break-system-packages \
+  faster-whisper &gt;/dev/null 2&gt;&amp;1 || true
+exit 0</pre><button onclick="cp(this)">Скопировать</button></article><article id="p2"><div class="h"><span class="n">02</span><h2>Промт Первого Запуска</h2></div><pre>Подготовь этот репозиторий для моушн-роликов на Remotion.
+1. Установи официальные скиллы Remotion из github.com/remotion-dev/skills в .claude/skills (например: npx skills add remotion-dev/skills). Проверь, что есть remotion-best-practices.
+2. Проверь ffmpeg, Node, Python и faster-whisper. Чего нет — установи.
+3. Создай в корне CLAUDE.md с правилами:
+- Каждый ролик — отдельная папка rolikN в корне, свой проект Remotion. Перед работой используй скилл remotion-best-practices.
+- Формат 1080×1920, 30 fps, длительность = длина озвучки.
+- Если дан готовый файл озвучки — новую не делай: перенеси его в папку ролика как public/voice.mp3, нормализуй до -14 LUFS, распознай faster-whisper с таймкодами слов и привязывай сцены и анимации к словам. Если файла нет, но есть GEMINI_API_KEY — озвучь через Gemini TTS, иначе спроси меня.
+- В каждой сцене 2–3 анимированных элемента по смыслу. Нет кадров «только текст» дольше 1,5 с. Что-то меняется каждые 2–3 с. Сильный хук в первые 2 с.
+- Текст — только внутри сцен, по словам. Отдельную дорожку субтитров не делай, если я не попрошу.
+- Переходы только плавные (растворение, наплыв, перетекание объекта), сцены перекрываются на 12–20 кадров. Без резких сдвигов и чёрных промежутков.
+- Голос главный, эффекты тише голоса. Фон — только тихий эмбиент, если стиль не говорит иначе.
+- Шрифты только с поддержкой кириллицы.
+- Порядок: контакт-лист (кадр каждые 3 с) в rolikN/preview.jpg и кадры стыков в rolikN/transitions.jpg → пришли ссылки → продолжай рендер, если я не написал «жди».
+- Итог: rolikN/out/rolikN.mp4 до 90 МБ (больше — снизь битрейт и перерендерь). Временные файлы не коммить.
+- В конце: коммит, пуш, pull request в main и две ссылки — на PR и прямую на MP4 вида github.com/ВЛАДЕЛЕЦ/reels/raw/main/rolikN/out/rolikN.mp4.
+- Ключи только из переменных окружения, никогда не записывай их в файлы.
+4. Закоммить, запушь, открой pull request в main и пришли ссылку.</pre><button onclick="cp(this)">Скопировать</button></article><article id="p3"><div class="h"><span class="n">03</span><h2>Промт Сценария — В Обычный Чат</h2></div><pre>Ты сценарист вирусных Reels.
+Тема: [ТЕМА]
+Для кого: [КТО СМОТРИТ]
+Длина: 45–60 секунд.
+
+1. Проверь факты по надёжным источникам и дай ссылки. Спорное — пометь.
+2. Дай 5 хуков разных типов: вопрос, шок-цифра, ошибка зрителя, тайна, противоречие.
+3. Напиши сценарий по сценам: время, озвучка, что на экране.
+4. Отдельно — чистый текст для озвучки: без ремарок, числа словами.
+5. Короткое описание под видео и 3–5 хэштегов.</pre><button onclick="cp(this)">Скопировать</button></article><article id="p4"><div class="h"><span class="n">04</span><h2>Промт Сборки</h2></div><pre>Сделай новый ролик в папке rolik[N] по правилам из CLAUDE.md.
+Сначала подтяни свежие файлы из main.
+
+Озвучка: файл [ИМЯ].mp3 из корня репозитория.
+Стиль: строго по файлу [СТИЛЬ].md.
+
+Сценарий:
+[ВСТАВЬ СЦЕНАРИЙ ИЗ ЭТАПА 5 —
+сцены с озвучкой и тем, что на экране]</pre><button onclick="cp(this)">Скопировать</button></article><article id="p5"><div class="h"><span class="n">05</span><h2>Резкие Переходы</h2></div><pre>Переходы грубые. Сделай все переходы плавными: растворение, наплыв с зумом, перетекание объектов, перекрытие сцен 12–20 кадров. Убери сдвиги кадра и чёрные полосы.</pre><button onclick="cp(this)">Скопировать</button></article><article id="p6"><div class="h"><span class="n">06</span><h2>Текст Дублируется</h2></div><pre>Текст дублируется. Убери отдельную дорожку субтитров, оставь только текст внутри сцен.</pre><button onclick="cp(this)">Скопировать</button></article><article id="p7"><div class="h"><span class="n">07</span><h2>Мало Визуала</h2></div><pre>Визуала мало. В каждой сцене минимум 2–3 анимированных элемента по смыслу, что-то меняется каждые 2–3 секунды.</pre><button onclick="cp(this)">Скопировать</button></article><article id="p8"><div class="h"><span class="n">08</span><h2>Не Тот Стиль</h2></div><pre>Переделай [rolikN] строго по файлу [СТИЛЬ].md. Озвучку и тайминги не меняй.</pre><button onclick="cp(this)">Скопировать</button></article><article id="p9"><div class="h"><span class="n">09</span><h2>Новая Озвучка</h2></div><pre>В [rolikN] замени озвучку на файл [ИМЯ].mp3 из корня репозитория и заново привяжи сцены к словам. Визуал не меняй.</pre><button onclick="cp(this)">Скопировать</button></article><article id="p10"><div class="h"><span class="n">10</span><h2>Обложка</h2></div><pre>Сделай обложку для [rolikN]: 1080×1920, лучший кадр + крупный заголовок «[ТЕКСТ]». Сохрани в [rolikN]/cover.jpg и пришли ссылку.</pre><button onclick="cp(this)">Скопировать</button></article><article id="p11"><div class="h"><span class="n">11</span><h2>Шаблон Ссылки</h2></div><pre>https://github.com/[ТВОЙ_НИК]/reels/raw/main/rolik[N]/out/rolik[N].mp4</pre><button onclick="cp(this)">Скопировать</button></article><article id="p12"><div class="h"><span class="n">12</span><h2>Говорящая Голова</h2></div><pre>Смонтируй рилс 1080×1920 из файла [ИМЯ].mp4 в новой папке montageN.
+- Распознай речь faster-whisper с таймкодами слов.
+- Вырежи паузы длиннее 0,3 с, оговорки, повторы и «э-э»; склейки — джамп-каты, каждую вторую с зумом 105–110%.
+- Кадрируй 9:16 по лицу, плавно, без рывков.
+- Субтитры по словам в нижней трети: жирный белый шрифт с обводкой, 2–4 слова, текущее слово подсвечено; ключевые слова крупнее.
+- Сверху в первые 3 с хук: «[ТЕКСТ ХУКА]».
+- Звук: убери шум, выровняй голос до -14 LUFS.
+Сначала пришли контакт-лист, потом рендер в montageN/out, PR в main и ссылки.</pre><button onclick="cp(this)">Скопировать</button></article><article id="p13"><div class="h"><span class="n">13</span><h2>Подкаст → Рилсы</h2></div><pre>Изучи расшифровку файла [ИМЯ].mp4 и предложи 10 самых сильных моментов по 30–60 с: таймкоды, хук, почему это зацепит. Жди моего выбора. Потом нарежь выбранные в папку podcastN: 9:16 по говорящему, субтитры по словам, хук сверху.</pre><button onclick="cp(this)">Скопировать</button></article><article id="p14"><div class="h"><span class="n">14</span><h2>Горизонталь → Вертикаль</h2></div><pre>Сделай из [ИМЯ].mp4 вертикальное видео 1080×1920: кадр следит за лицом того, кто говорит. Если лица нет — видео по центру, сверху и снизу размытый фон. Звук не меняй.</pre><button onclick="cp(this)">Скопировать</button></article><article id="p15"><div class="h"><span class="n">15</span><h2>Инфографика Поверх Видео</h2></div><pre>К видео [ИМЯ].mp4 добавь моушн-инфографику по словам из речи:
+- цифры и проценты — крупные счётчики;
+- сравнения — анимированные столбики;
+- перечисления — плашки по одной;
+- названия и бренды — иконки или подписи.
+Графика в стиле [СТИЛЬ].md, не закрывает лицо, появляется ровно под слова.</pre><button onclick="cp(this)">Скопировать</button></article><article id="p16"><div class="h"><span class="n">16</span><h2>Реалистичные Кадры Из Нейросети</h2></div><pre>Я загрузил кадры [shot1.mp4, shot2.mp4, …]. Смонтируй из них ролик под озвучку [ИМЯ].mp3: порядок по смыслу сценария ниже, плавные переходы, единая цветокоррекция, текст по словам, звуковые эффекты тише голоса.
+Сценарий: [ВСТАВЬ]</pre><button onclick="cp(this)">Скопировать</button></article><article id="p17"><div class="h"><span class="n">17</span><h2>Продающий Ролик Из Фото Товара</h2></div><pre>Сделай рекламный рилс 15–20 с из фото [foto1.jpg, foto2.jpg]: товар крупно с медленным наездом, 3 преимущества плашками, цена «[ЦЕНА]» и призыв «[ПРИЗЫВ]». Стиль — [СТИЛЬ].md. Без озвучки: ритмичные звуки.</pre><button onclick="cp(this)">Скопировать</button></article><article id="p18"><div class="h"><span class="n">18</span><h2>Промт — Установить Стили</h2></div><pre>Скачай файлы стилей из папки
+https://neocreator63.github.io/motion-code/s/k7x2q/
+и положи в корень репозитория:
+Maneken.md, Chronos.md, Poster.md, Neon.md, Archive.md, Kinetic.md, Blueprint.md, Terminal.md, Collage.md, Chalk.md
+Закоммить, запушь, открой PR в main и пришли ссылку.</pre><button onclick="cp(this)">Скопировать</button></article><article id="p19"><div class="h"><span class="n">19</span><h2>Промт — Стиль Из Референса</h2></div><pre>Изучи файл [ИМЯ].mp4 из корня репозитория: разложи на кадры, посмотри палитру, шрифты, композицию, движение камеры, переходы, ритм и звук.
+Составь дизайн-систему в файле [Название].md: как выглядит, палитра (hex), шрифты с кириллицей, приёмы, камера, переходы, звук, ритм ролика и строка стиля для промта.
+Не копируй конкретные сцены и персонажей — только стиль.
+Закоммить, запушь, открой PR в main.</pre><button onclick="cp(this)">Скопировать</button></article>
+<script>function cp(b){const t=b.previousElementSibling.textContent;const d=()=>{b.classList.add('ok');b.textContent='Скопировано ✓';setTimeout(()=>{b.classList.remove('ok');b.textContent='Скопировать'},2000)};
+if(navigator.clipboard&&isSecureContext)navigator.clipboard.writeText(t).then(d,f);else f();function f(){const a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();try{document.execCommand('copy');d()}catch(e){}a.remove()}}</script>
+</body></html>
