@@ -1,0 +1,534 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>MOTION CODE — моушн-ролики для Reels с помощью ИИ</title>
+<meta name="description" content="Пошаговая методичка: как делать моушн-ролики для Reels, TikTok и Shorts с помощью ИИ — с телефона, планшета или компьютера.">
+<meta property="og:title" content="MOTION CODE — Reels × AI">
+<meta property="og:description" content="Моушн-ролики с помощью ИИ. С телефона. Без After Effects и оплаты за каждую генерацию.">
+<meta property="og:image" content="media/rolik7.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#ECECE9;--ink:#111;--mute:#77776f;--sig:#F2542D;--line:#cfcfc9;--card:#fff}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+img,video{display:block;max-width:100%}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.lbl{font:600 10px/1.2 Inter;letter-spacing:.18em;text-transform:uppercase}
+.k{font:700 10px Inter;letter-spacing:.2em;text-transform:uppercase;color:var(--sig)}
+.num{font:600 11px Inter;letter-spacing:.14em}
+.arrow{display:inline-flex;width:52px;height:52px;background:var(--ink);color:#fff;align-items:center;justify-content:center;font:600 22px Inter;text-decoration:none;flex:none;transition:background .2s}
+.arrow:hover{background:var(--sig)}
+.sphere{position:absolute;border-radius:50%;background:radial-gradient(circle at 34% 30%,#fbfbf9,#d6d6d0 72%);opacity:.75;pointer-events:none;z-index:0}
+
+/* header */
+header{position:sticky;top:0;z-index:50;background:rgba(236,236,233,.92);backdrop-filter:blur(10px);border-bottom:1px solid transparent}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:58px}
+.logo{font:900 20px Inter;letter-spacing:-.04em;text-decoration:none}
+.logo i{font-style:normal;color:var(--sig)}
+nav{display:flex;gap:28px}
+nav a{text-decoration:none}
+.burger{width:22px;height:9px;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);background:none;border-left:0;border-right:0;cursor:pointer}
+.menu{display:none;position:fixed;inset:58px 0 auto 0;background:var(--bg);padding:20px;z-index:49;border-bottom:1px solid var(--line)}
+.menu a{display:block;font:800 28px Inter;letter-spacing:-.03em;text-decoration:none;padding:6px 0}
+.menu.open{display:block}
+
+/* hero */
+.hero{position:relative;padding:28px 0 0;overflow:hidden}
+.hero-grid{position:relative;display:grid;grid-template-columns:1fr;min-height:calc(100svh - 58px)}
+.wordmark{position:relative;z-index:2;font:900 clamp(78px,21vw,230px)/.8 Inter;letter-spacing:-.065em;margin-top:10px}
+.wordmark i{font-style:normal;color:var(--sig)}
+.hero-lead{position:relative;z-index:2;max-width:330px;margin:22px 0 0;font:500 15px/1.5 Inter}
+.hero-lead b{font-weight:800}
+.vert{position:absolute;writing-mode:vertical-rl;transform:rotate(180deg)}
+.hero .v-price{left:6px;bottom:24px;font:900 64px/1 Inter;letter-spacing:-.05em;z-index:3}
+.hero .v-right{right:4px;top:24px;transform:none;font:700 10px Inter;letter-spacing:.2em;text-transform:uppercase;z-index:3}
+.stage{position:relative;margin:30px -20px 0 62px;height:520px}
+.stage .slab{position:absolute;left:0;right:0;bottom:70px;height:300px;background:var(--sig)}
+.stage .phone{position:absolute;right:26px;bottom:0;width:250px;aspect-ratio:9/19;border-radius:34px;background:#0c0c0c;padding:9px;box-shadow:0 40px 80px rgba(0,0,0,.28);z-index:2}
+.phone video,.phone img{width:100%;height:100%;object-fit:cover;border-radius:26px;background:#000}
+.phone:before{content:"";position:absolute;top:15px;left:50%;translate:-50% 0;width:78px;height:20px;border-radius:12px;background:#0c0c0c;z-index:3}
+.stage .go{position:absolute;left:0;bottom:70px;z-index:3}
+.stage .mini{position:absolute;left:18px;top:24px;z-index:3;max-width:180px;display:none}
+.stage .mini p{font:600 10px/1.5 Inter;letter-spacing:.06em;text-transform:uppercase;margin-top:8px;color:#333}
+
+/* strip */
+.strip{background:var(--ink);color:#fff;overflow:hidden;white-space:nowrap;padding:16px 0;margin-top:0}
+.strip div{display:inline-block;animation:run 28s linear infinite;font:800 22px Inter;letter-spacing:-.02em}
+.strip span{color:var(--sig);margin:0 22px}
+@keyframes run{to{transform:translateX(-50%)}}
+
+section{position:relative;padding:84px 0;scroll-margin-top:58px}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;margin-bottom:34px;border-bottom:1.5px solid var(--ink);padding-bottom:14px}
+h2{font:900 clamp(40px,9vw,92px)/.88 Inter;letter-spacing:-.055em}
+h2 i{font-style:normal;color:var(--sig)}
+h3{font:800 21px/1.15 Inter;letter-spacing:-.02em}
+p{font:500 15.5px/1.55 Inter}
+
+/* examples */
+.reels{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.reel{position:relative;cursor:pointer}
+.reel .phone{position:relative;width:100%;aspect-ratio:9/19;border-radius:28px;background:#0c0c0c;padding:7px;box-shadow:0 24px 50px rgba(0,0,0,.18)}
+.reel .phone:before{top:12px;width:56px;height:15px}
+.reel .phone video{border-radius:22px}
+.reel .cap{display:flex;justify-content:space-between;margin-top:12px;gap:8px}
+.reel .cap b{font:800 13.5px/1.25 Inter}
+.reel .snd{position:absolute;right:16px;bottom:58px;z-index:4;background:var(--sig);color:#fff;font:700 9px Inter;letter-spacing:.14em;padding:6px 8px;text-transform:uppercase}
+.ex-note{margin-top:26px;display:flex;gap:16px;align-items:center}
+
+/* audience tabs */
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.tab{border:1.5px solid var(--ink);background:none;font:700 12px Inter;letter-spacing:.06em;text-transform:uppercase;padding:11px 14px;cursor:pointer;color:var(--ink)}
+.tab.on{background:var(--ink);color:#fff}
+.pane{display:none;grid-template-columns:1fr;gap:12px}
+.pane.on{display:grid}
+.pane .pain,.pane .gain{padding:26px 22px;min-height:200px;position:relative}
+.pane .pain{background:#fff}
+.pane .gain{background:var(--sig);color:#fff}
+.pane .lbl{margin-bottom:14px;display:block}
+.pane p{font:600 18px/1.45 Inter;letter-spacing:-.01em}
+.pane ul{margin-top:14px;list-style:none}
+.pane li{font:500 14.5px/1.5 Inter;padding-left:20px;position:relative;margin-bottom:6px}
+.pane li:before{content:"→";position:absolute;left:0}
+
+/* why */
+.why{display:grid;grid-template-columns:1fr;gap:0;border-top:1.5px solid var(--ink)}
+.why>div{display:grid;grid-template-columns:70px 1fr;gap:14px;padding:22px 0;border-bottom:1px solid var(--line)}
+.why .n{font:900 42px/1 Inter;letter-spacing:-.05em;color:var(--sig)}
+.why h3{margin-bottom:6px}
+.why p{font-size:14.5px;color:#333}
+
+/* how */
+.how{display:grid;grid-template-columns:1fr;gap:12px}
+.how .st{background:#fff;padding:24px 22px 22px;position:relative;min-height:190px}
+.how .st .num{color:var(--mute)}
+.how .st h3{margin:46px 0 8px}
+.how .st p{font-size:14.5px;color:#333}
+.how .st.dark{background:var(--ink);color:#fff}
+.how .st.dark p{color:#ccc}
+
+/* inside */
+.inside{display:grid;grid-template-columns:1fr;gap:0;border-top:1.5px solid var(--ink)}
+.inside li{list-style:none;display:flex;justify-content:space-between;gap:16px;padding:15px 0;border-bottom:1px solid var(--line);font:600 16px/1.35 Inter}
+.inside li span{color:var(--mute);font:600 11px Inter;letter-spacing:.14em;white-space:nowrap;padding-top:4px}
+.styles{display:grid;grid-template-columns:1fr;gap:12px;margin-top:30px}
+.sty{padding:22px;min-height:230px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between}
+.sty h3{font:900 44px/.9 Inter;letter-spacing:-.05em}
+.sty p{font-size:14px;max-width:290px}
+.sty .dots{display:flex;gap:6px;margin-top:14px}
+.sty .dots i{width:16px;height:16px;display:block;border:1px solid rgba(255,255,255,.25)}
+.s1{background:#000;color:#fff}.s1 h3 em{color:#3DFF7A;font-style:normal}
+.s2{background:#0B1018;color:#E8EEF4}.s2 h3 em{color:#FF8A3D;font-style:normal}
+.s3{background:#fff}.s3 h3 em{color:var(--sig);font-style:normal}
+.s1 .glow{position:absolute;right:-30px;top:-30px;width:160px;height:160px;border-radius:50%;background:radial-gradient(circle,#3DFF7A 0,#3DFF7A55 35%,transparent 70%)}
+.s2 .grid{position:absolute;right:16px;top:16px;display:grid;grid-template-columns:repeat(13,8px);gap:3px}
+.s2 .grid b{width:8px;height:8px;background:#1C2A3A;display:block}.s2 .grid b.on{background:#8FA3B8}.s2 .grid b.e{background:#FF8A3D}
+.s3 .big{position:absolute;right:-6px;top:-18px;font:900 120px/1 Inter;letter-spacing:-.06em;color:var(--sig)}
+
+/* calc */
+.calc{background:#fff;padding:26px 22px;display:grid;grid-template-columns:1fr;gap:26px}
+.field{margin-bottom:22px}
+.field label{display:flex;justify-content:space-between;font:700 13px Inter;margin-bottom:12px}
+.field label b{font:900 20px Inter;letter-spacing:-.02em}
+input[type=range]{width:100%;accent-color:var(--sig);height:28px}
+.out{background:var(--ink);color:#fff;padding:24px 22px;display:flex;flex-direction:column;justify-content:space-between}
+.out .big{font:900 clamp(46px,12vw,76px)/1 Inter;letter-spacing:-.05em;margin:10px 0 6px}
+.out .big i{font-style:normal;color:var(--sig)}
+.out p{font-size:13.5px;color:#bbb}
+
+/* author */
+.author{display:grid;grid-template-columns:1fr;gap:24px;align-items:end}
+.author .q{font:800 clamp(26px,5.5vw,46px)/1.12 Inter;letter-spacing:-.035em}
+.author .q i{font-style:normal;color:var(--sig)}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);border-top:1.5px solid var(--ink)}
+.facts div{padding:16px 0}
+.facts b{display:block;font:900 40px/1 Inter;letter-spacing:-.05em}
+.facts span{font:600 10px Inter;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+
+/* price */
+.price{background:var(--ink);color:#fff;overflow:hidden}
+.price .sec-head{border-color:#fff}
+.price-grid{display:grid;grid-template-columns:1fr;gap:28px}
+.tag-old{font:700 22px Inter;color:#8a8a84;text-decoration:line-through;text-decoration-color:var(--sig);text-decoration-thickness:3px}
+.tag-old-cap{font:600 10px Inter;letter-spacing:.14em;text-transform:uppercase;color:#8a8a84;margin-top:4px}
+.tag-now{font:900 clamp(84px,24vw,190px)/.85 Inter;letter-spacing:-.07em;margin:18px 0 8px}
+.tag-now i{font-style:normal;color:var(--sig);font-size:.45em;letter-spacing:-.03em;vertical-align:top;margin-left:6px}
+.incl{list-style:none;border-top:1px solid #333}
+.incl li{padding:13px 0;border-bottom:1px solid #333;font:600 15px/1.4 Inter;display:flex;gap:12px}
+.incl li:before{content:"";flex:none;width:10px;height:10px;background:var(--sig);margin-top:5px}
+.btn{display:inline-flex;align-items:center;gap:14px;background:var(--sig);color:#fff;text-decoration:none;font:800 15px Inter;letter-spacing:.04em;text-transform:uppercase;padding:0 0 0 22px;height:58px;border:0;cursor:pointer}
+.btn .arrow{width:58px;height:58px;background:#111}
+.btn.light .arrow{background:#fff;color:#111}
+
+/* pay */
+.pay{display:grid;grid-template-columns:1fr;gap:12px}
+.ps{background:#fff;padding:24px 22px;position:relative}
+.ps .num{color:var(--mute)}
+.ps h3{margin:16px 0 10px}
+.card{background:var(--ink);color:#fff;padding:20px;margin-top:12px;position:relative;overflow:hidden}
+.card .bank{font:700 11px Inter;letter-spacing:.16em;text-transform:uppercase;color:#9a9a93}
+.card .cnum{font:800 clamp(18px,5.4vw,27px)/1 Inter;letter-spacing:.04em;white-space:nowrap;margin:18px 0 10px;font-variant-numeric:tabular-nums}
+.card .who{font:600 13px Inter;color:#ccc}
+.card:after{content:"";position:absolute;right:-30px;top:-30px;width:110px;height:110px;border-radius:50%;background:var(--sig);opacity:.9}
+.copy{margin-top:12px;width:100%;height:50px;border:1.5px solid var(--ink);background:none;font:800 13px Inter;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;color:var(--ink)}
+.copy.ok{background:var(--sig);border-color:var(--sig);color:#fff}
+.sum{display:flex;justify-content:space-between;align-items:baseline;margin-top:14px;padding-top:12px;border-top:1px solid var(--line)}
+.sum b{font:900 30px Inter;letter-spacing:-.03em}
+.ps.hot{background:var(--sig);color:#fff}
+.ps.hot .num{color:#ffd9cf}
+.ps.hot .btn{background:#111;width:100%;justify-content:space-between;margin-top:14px}
+.ps.hot .btn .arrow{background:#fff;color:#111}
+.small{font:500 12.5px/1.5 Inter;color:var(--mute);margin-top:10px}
+.ps.hot .small{color:#ffe1d8}
+
+/* faq */
+details{border-bottom:1px solid var(--line)}
+details:first-of-type{border-top:1.5px solid var(--ink)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:16px;padding:20px 0;font:700 17px/1.35 Inter;letter-spacing:-.01em}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";font:400 26px/1 Inter;color:var(--sig)}
+details[open] summary:after{content:"−"}
+details p{padding:0 0 20px;color:#333;max-width:760px}
+
+footer{padding:70px 0 40px;overflow:hidden}
+footer .wm{font:900 clamp(96px,30vw,330px)/.78 Inter;letter-spacing:-.07em}
+footer .wm i{font-style:normal;color:var(--sig)}
+footer .row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:30px;border-top:1.5px solid var(--ink);padding-top:16px}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* desktop */
+@media (min-width:860px){
+  .wrap{padding:0 40px}
+  .hero-grid{grid-template-columns:1.05fr 1fr;min-height:auto;padding-bottom:70px}
+  .hero .v-price{left:4px;bottom:70px;font-size:96px}
+  .hero-left{padding-left:70px;padding-top:40px}
+  .wordmark{font-size:clamp(90px,11.2vw,175px)}
+  .stage{margin:0;height:640px}
+  .stage .slab{left:-60px;right:-60px;bottom:110px;height:330px}
+  .stage .phone{width:300px;right:70px;bottom:40px}
+  .stage .go{left:-60px;bottom:110px}
+  .stage .mini{display:block;left:10px;top:0}
+  .reels{grid-template-columns:repeat(4,1fr);gap:22px}
+  .pane{grid-template-columns:1fr 1fr}
+  .why{grid-template-columns:1fr 1fr;column-gap:40px}
+  .how{grid-template-columns:repeat(4,1fr)}
+  .inside{grid-template-columns:1fr 1fr;column-gap:40px}
+  .styles{grid-template-columns:repeat(3,1fr)}
+  .calc{grid-template-columns:1.2fr 1fr;padding:34px}
+  .author{grid-template-columns:1.4fr 1fr}
+  .price-grid{grid-template-columns:1fr 1fr;align-items:end}
+  .pay{grid-template-columns:repeat(3,1fr)}
+}
+@media (max-width:859px){nav{display:none}}
+@media (min-width:860px){.burger{display:none}}
+@media (prefers-reduced-motion:reduce){.strip div{animation:none}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#top">mc<i>.</i></a>
+    <nav class="lbl"><a href="#examples">Примеры</a><a href="#who">Для кого</a><a href="#inside">Что внутри</a><a href="#price">Цена</a></nav>
+    <span class="lbl" style="display:none">reels × ai</span>
+    <button class="burger" aria-label="Меню" onclick="document.querySelector('.menu').classList.toggle('open')"></button>
+  </div>
+</header>
+<div class="menu" onclick="this.classList.remove('open')">
+  <a href="#examples">Примеры</a><a href="#who">Для кого</a><a href="#why">Почему не залетало</a><a href="#inside">Что внутри</a><a href="#price">Цена</a><a href="#pay">Оплата</a>
+</div>
+
+<!-- HERO -->
+<div class="hero" id="top">
+  <div class="sphere" style="width:260px;height:260px;right:-90px;top:40px"></div>
+  <div class="sphere" style="width:120px;height:120px;left:42%;top:52%"></div>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-left">
+        <div class="lbl" style="position:relative;z-index:2">— reels × ai · методичка</div>
+        <h1 class="wordmark">motion<br>code<i>.</i></h1>
+        <p class="hero-lead">Моушн-ролики для Reels, TikTok и Shorts с помощью ИИ. <b>С телефона.</b> Без After Effects и без оплаты за каждую генерацию.</p>
+      </div>
+      <div class="stage">
+        <div class="mini"><span class="k">— 01</span><p>Все ролики на этой странице сделаны по методичке</p></div>
+        <div class="slab"></div>
+        <a class="arrow go" href="#price" aria-label="К цене">→</a>
+        <div class="phone"><video src="media/rolik7.mp4" poster="media/rolik7.jpg" autoplay muted loop playsinline preload="metadata"></video></div>
+      </div>
+    </div>
+  </div>
+  <div class="vert v-price">1990</div>
+  <div class="vert v-right">motion code · system of creation</div>
+</div>
+
+<div class="strip" aria-hidden="true"><div>10 этапов<span>/</span>3 авторских стиля<span>/</span>шаблоны промтов<span>/</span>телефон · планшет · ПК<span>/</span>без After Effects<span>/</span>10 этапов<span>/</span>3 авторских стиля<span>/</span>шаблоны промтов<span>/</span>телефон · планшет · ПК<span>/</span>без After Effects<span>/</span></div></div>
+
+<!-- EXAMPLES -->
+<section id="examples">
+  <div class="wrap">
+    <div class="sec-head reveal"><h2>примеры<i>.</i></h2><span class="num">— 02</span></div>
+    <div class="reels">
+      <div class="reel reveal"><div class="phone"><video src="media/rolik6.mp4" poster="media/rolik6.jpg" muted loop playsinline preload="none"></video></div><span class="snd">▶ нажми</span><div class="cap"><b>5 трюков казино, которые работают на тебе</b><span class="num">68 с</span></div></div>
+      <div class="reel reveal"><div class="phone"><video src="media/rolik7.mp4" poster="media/rolik7.jpg" muted loop playsinline preload="none"></video></div><span class="snd">▶ нажми</span><div class="cap"><b>Твоё внимание — самый дорогой товар</b><span class="num">61 с</span></div></div>
+      <div class="reel reveal"><div class="phone"><video src="media/rolik8.mp4" poster="media/rolik8.jpg" muted loop playsinline preload="none"></video></div><span class="snd">▶ нажми</span><div class="cap"><b>Что будет, если не спать 3 дня</b><span class="num">50 с</span></div></div>
+      <div class="reel reveal"><div class="phone"><video src="media/rolik1.mp4" poster="media/rolik1.jpg" muted loop playsinline preload="none"></video></div><span class="snd">▶ нажми</span><div class="cap"><b>Тебя замечают в 2 раза меньше, чем кажется</b><span class="num">60 с</span></div></div>
+    </div>
+    <div class="ex-note reveal"><a class="arrow" href="#how">↓</a><p style="font-size:14px;max-width:520px">Каждый ролик — от идеи до готового MP4 — собран ИИ по промтам из методички. Монтажная программа не открывалась ни разу.</p></div>
+  </div>
+</section>
+
+<!-- WHO -->
+<section id="who" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head reveal"><h2>для кого<i>.</i></h2><span class="num">— 03</span></div>
+    <div class="tabs reveal" role="tablist">
+      <button class="tab on" data-t="0">Монтажёрам</button>
+      <button class="tab" data-t="1">Экспертам и блогерам</button>
+      <button class="tab" data-t="2">ИИ-креаторам</button>
+      <button class="tab" data-t="3">Уже покупал курсы по ИИ</button>
+    </div>
+    <div class="pane on reveal">
+      <div class="pain"><span class="lbl">сейчас</span><p>Клиенты хотят «как в залетевших роликах»: моушн, 3D, графику. А в After Effects это часы на каждый ролик — и цена, которую клиент не готов платить.</p></div>
+      <div class="gain"><span class="lbl">после методички</span><p>Новая услуга, которую делаешь за вечер, а не за неделю.</p><ul><li>моушн-ролик за 30–90 минут работы ИИ</li><li>твоё дело — задание, проверка, правки</li><li>готовые стили, чтобы ролики клиентов выглядели дорого</li></ul></div>
+    </div>
+    <div class="pane">
+      <div class="pain"><span class="lbl">сейчас</span><p>Говорящая голова надоела и тебе, и зрителям. Монтажёр дорогой, а сам ты не дизайнер. Мысли есть — формата нет.</p></div>
+      <div class="gain"><span class="lbl">после методички</span><p>Твой текст превращается в ролик, который досматривают.</p><ul><li>без съёмки лица, света и студии</li><li>хуки и структура, которые держат до конца</li><li>свой узнаваемый стиль для всего блога</li></ul></div>
+    </div>
+    <div class="pane">
+      <div class="pain"><span class="lbl">сейчас</span><p>Видео-генераторы: дубль за дублем, токены тают, персонаж меняется от кадра к кадру, текст на экране — каша.</p></div>
+      <div class="gain"><span class="lbl">после методички</span><p>Код вместо генерации — предсказуемый результат.</p><ul><li>правки входят в подписку, а не в токены</li><li>превью кадров до долгого рендера</li><li>чёткий текст и цифры на экране, без «каши»</li></ul></div>
+    </div>
+    <div class="pane">
+      <div class="pain"><span class="lbl">сейчас</span><p>Заплатил за курс по ИИ, докупал токены, сделал ролики — а они не залетели. И непонятно, что было не так: инструмент, монтаж или ты.</p></div>
+      <div class="gain"><span class="lbl">после методички</span><p>Не волшебная кнопка, а система, которую можно повторять каждый день.</p><ul><li>почему ролики не досматривают — и как это исправить</li><li>хук, ритм, движение каждые 2–3 секунды</li><li>1 990 ₽ — дешевле месяца подписки на большинство видео-генераторов</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section id="why" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head reveal"><h2>почему не<br>залетало<i>.</i></h2><span class="num">— 04</span></div>
+    <div class="why">
+      <div class="reveal"><span class="n">01</span><div><h3>Нет хука в первые 2 секунды</h3><p>Красивая заставка, логотип, медленный старт — и человек уже листает дальше. В методичке — 6 формул хука и правила первого кадра.</p></div></div>
+      <div class="reveal"><span class="n">02</span><div><h3>Красиво, но ничего не происходит</h3><p>Один кадр по 5 секунд и текст на пустом фоне. Здесь правило: что-то меняется каждые 2–3 секунды — оно зашито прямо в настройки ИИ.</p></div></div>
+      <div class="reveal"><span class="n">03</span><div><h3>Токены вместо системы</h3><p>Генераторы берут плату за каждую попытку. Здесь ролик собирается из кода: правки — в рамках подписки, а кадры видно до рендера.</p></div></div>
+      <div class="reveal"><span class="n">04</span><div><h3>Один ролик — и тишина</h3><p>Алгоритм любит регулярность. После настройки ролик занимает у тебя около 10 минут действий — можно выкладывать каждый день.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW -->
+<section id="how" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head reveal"><h2>как это<br>работает<i>.</i></h2><span class="num">— 05</span></div>
+    <div class="how">
+      <div class="st reveal"><span class="num">— 01</span><h3>Идея и хук</h3><p>Тема, проверка фактов, 5 хуков и сценарий по сценам — одним промтом за 5 минут.</p></div>
+      <div class="st reveal"><span class="num">— 02</span><h3>Озвучка</h3><p>Любой сервис или свой голос. MP3 загружается в облако в 6 нажатий.</p></div>
+      <div class="st reveal"><span class="num">— 03</span><h3>Промт сборки</h3><p>Один короткий промт — ИИ сам режет озвучку по словам и собирает сцены.</p></div>
+      <div class="st dark reveal"><span class="num">— 04</span><h3>Готовый MP4</h3><p>Превью кадров, правки списком, одна кнопка — и ролик у тебя в галерее.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- INSIDE -->
+<section id="inside" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head reveal"><h2>что<br>внутри<i>.</i></h2><span class="num">— 06</span></div>
+    <ul class="inside reveal">
+      <li>Настройка с нуля: GitHub, Claude, облачная среда<span>этапы 1–3</span></li>
+      <li>Промт первого запуска — один раз и навсегда<span>этап 4</span></li>
+      <li>Сценарий и 6 формул хука<span>этап 5</span></li>
+      <li>Озвучка: 4 способа и правила текста<span>этап 6</span></li>
+      <li>Главный промт сборки<span>этап 7</span></li>
+      <li>Превью и 6 готовых шаблонов правок<span>этап 8</span></li>
+      <li>Как забрать видео на любое устройство<span>этап 9</span></li>
+      <li>Публикация, время, прогрев нового аккаунта<span>этап 10</span></li>
+      <li>Как не сжечь лимит подписки<span>бонус</span></li>
+      <li>13 частых ошибок и решения<span>бонус</span></li>
+      <li>Свой стиль из любого референса<span>бонус</span></li>
+      <li>Разделы для телефона, планшета и ПК<span>везде</span></li>
+    </ul>
+    <div class="styles">
+      <div class="sty s1 reveal"><div class="glow"></div><div><span class="lbl" style="color:#3DFF7A">стиль 01 · 3d</span></div><div><h3>манекен<em>.</em></h3><p>Глиняный 3D-манекен на чёрном. Голова-индикатор светится кислотно-зелёным. Для психологии и привычек.</p><div class="dots"><i style="background:#000"></i><i style="background:#D9D9D6"></i><i style="background:#3DFF7A"></i></div></div></div>
+      <div class="sty s2 reveal"><div class="grid" id="g"></div><div><span class="lbl" style="color:#FF8A3D">стиль 02 · кино</span></div><div><h3>хронос<em>.</em></h3><p>Кино-эпик о времени: гигантский масштаб, холодная сталь и одна оранжевая вспышка. Для мотивации.</p><div class="dots"><i style="background:#0B1018"></i><i style="background:#1C2A3A"></i><i style="background:#8FA3B8"></i><i style="background:#FF8A3D"></i></div></div></div>
+      <div class="sty s3 reveal"><span class="big">01</span><div><span class="lbl" style="color:var(--sig)">стиль 03 · 2d</span></div><div><h3>постер<em>.</em></h3><p>Живой швейцарский плакат: огромная типографика и сетка. Самый быстрый и экономный — для фактов и клиентов.</p><div class="dots"><i style="background:#E9E9E6;border-color:#0002"></i><i style="background:#111"></i><i style="background:#F2542D"></i></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CALC -->
+<section id="calc" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head reveal"><h2>посчитай<i>.</i></h2><span class="num">— 07</span></div>
+    <div class="calc reveal">
+      <div>
+        <p style="margin-bottom:24px;color:#333">Если продавать такие ролики как услугу — блогерам, экспертам, бизнесу. Двигай ползунки.</p>
+        <div class="field"><label>Роликов в месяц <b id="vN">10</b></label><input type="range" id="n" min="2" max="60" value="10"></div>
+        <div class="field"><label>Цена за ролик, ₽ <b id="vP">3 000</b></label><input type="range" id="pr" min="1000" max="15000" step="500" value="3000"></div>
+      </div>
+      <div class="out">
+        <span class="lbl" style="color:#999">в месяц</span>
+        <div class="big" id="sum">30 000 <i>₽</i></div>
+        <p id="pb">Методичка окупается с первого заказа.</p>
+        <p style="margin-top:18px;font-size:11.5px;color:#777">Это калькулятор, а не обещание: доход зависит от того, сколько клиентов ты найдёшь.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AUTHOR -->
+<section id="author" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head reveal"><h2>автор<i>.</i></h2><span class="num">— 08</span></div>
+    <div class="author reveal">
+      <p class="q">Я 3 года занимаюсь монтажом. ИИ <i>сильно облегчил</i> мне работу — сейчас я делаю свои проекты. Эта методичка — моя рабочая система, без воды и без обещаний миллионов.</p>
+      <div class="facts"><div><b>3</b><span>года в монтаже</span></div><div><b>10</b><span>этапов</span></div><div><b>3</b><span>стиля</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICE -->
+<section id="price" class="price">
+  <div class="wrap">
+    <div class="sec-head"><h2>цена<i>.</i></h2><span class="num">— 09</span></div>
+    <div class="price-grid">
+      <div class="reveal">
+        <div class="tag-old" id="old">15 000 ₽</div>
+        <div class="tag-old-cap">столько стоят курсы по ИИ-видео</div>
+        <div class="tag-now"><span id="now">1 990</span><i>₽</i></div>
+        <p style="color:#bbb;max-width:380px">Один платёж. Методичка в PDF и 3 стиля остаются у тебя навсегда.</p>
+        <a class="btn" href="#pay" style="margin-top:24px">Купить<span class="arrow">→</span></a>
+      </div>
+      <ul class="incl reveal">
+        <li>Методичка MOTION CODE — 10 этапов простым языком</li>
+        <li>Все промты: запуск, сценарий, сборка, правки</li>
+        <li>3 авторских стиля: Манекен, Хронос, Постер</li>
+        <li>Разделы для телефона, планшета и компьютера</li>
+        <li>13 частых ошибок и готовые решения</li>
+        <li>Как сделать свой стиль из любого ролика</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PAY -->
+<section id="pay">
+  <div class="wrap">
+    <div class="sec-head reveal"><h2>оплата<i>.</i></h2><span class="num">— 10</span></div>
+    <div class="pay">
+      <div class="ps reveal">
+        <span class="num">— 01</span>
+        <h3>Переведи по номеру карты</h3>
+        <p style="font-size:14px;color:#333">Из любого банка — по номеру карты или через СБП в приложении своего банка.</p>
+        <div class="card"><div class="bank" id="bank">Сбербанк</div><div class="cnum" id="cnum">2202 2085 5582 7717</div><div class="who" id="holder">Получатель: Rahmonov M.</div></div>
+        <button class="copy" id="copy">Скопировать номер</button>
+        <div id="sbp" style="display:none"><div class="card" style="margin-top:10px"><div class="bank">СБП · по номеру телефона</div><div class="cnum" id="sbpn"></div></div><button class="copy" id="copy2">Скопировать телефон</button></div>
+        <div class="sum"><span class="lbl">к оплате</span><b><span id="now2">1 990</span> ₽</b></div>
+      </div>
+      <div class="ps reveal">
+        <span class="num">— 02</span>
+        <h3>Сделай скриншот</h3>
+        <p style="font-size:14px;color:#333">Сохрани скрин или чек об успешном переводе — на нём должны быть видны сумма и время.</p>
+        <div style="margin-top:22px;border:1.5px dashed #bdbdb6;height:150px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:6px">
+          <span style="font:900 40px Inter;color:var(--sig)">✓</span><span class="lbl">перевод выполнен</span></div>
+      </div>
+      <div class="ps hot reveal">
+        <span class="num">— 03</span>
+        <h3>Отправь скрин в директ</h3>
+        <p style="font-size:14px">Пришлю методичку и стили прямо в директ Instagram. Пришёл по кодовому слову — просто ответь скрином в той же переписке.</p>
+        <a class="btn" id="ig" href="https://ig.me/m/format_razuma" target="_blank" rel="noopener">Открыть директ<span class="arrow">→</span></a>
+        <p class="small">Отвечаю вручную, обычно в течение нескольких часов.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head reveal"><h2>вопросы<i>.</i></h2><span class="num">— 11</span></div>
+    <div class="reveal">
+      <details><summary>Мне нужен компьютер?</summary><p>Нет. Всё делается с телефона: приложение Claude и браузер. В методичке есть отдельные пометки для планшета и компьютера — если тебе удобнее с них.</p></details>
+      <details><summary>Сколько нужно платить сверху?</summary><p>Нужна подписка Claude Pro (от $20 в месяц) — именно она собирает ролики. GitHub бесплатный. Озвучка — от 0 ₽, если записываешь своим голосом. Оплаты за каждую генерацию нет.</p></details>
+      <details><summary>Я не монтажёр и не программист. Справлюсь?</summary><p>Да. Код пишет ИИ, ты его даже не видишь. Твоя часть — скопировать промт, загрузить озвучку и нажать пару кнопок. Каждый шаг расписан по нажатиям.</p></details>
+      <details><summary>Можно делать реалистичные ролики с людьми?</summary><p>Сам метод — это моушн, графика и 3D. Реалистичные кадры генерируешь в видео-нейросети, а ИИ по методичке их монтирует, добавляет текст и переходы. Как это сделать — тоже внутри.</p></details>
+      <details><summary>На какие темы подходит?</summary><p>Психология, мотивация, дисциплина, факты, история, деньги, бизнес, экспертный контент, ролики для клиентов. Три стиля из бонуса закрывают большинство ниш.</p></details>
+      <details><summary>Как быстро я получу методичку?</summary><p>После того как пришлёшь скрин перевода в директ. Проверяю вручную, обычно в течение нескольких часов.</p></details>
+      <details><summary>Это гарантирует, что ролики залетят?</summary><p>Нет — этого честно не гарантирует никто. Методичка даёт систему: хук, ритм, движение, регулярность. Дальше решают тема и постоянство.</p></details>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="wm">code<i>.</i></div>
+    <div class="row lbl"><span>motion code · 2026</span><a href="#pay">купить за 1 990 ₽ →</a><a id="igf" href="https://instagram.com/format_razuma" target="_blank" rel="noopener">instagram</a></div>
+  </div>
+</footer>
+
+<script>
+/* ==== НАСТРОЙКИ: меняй только здесь ==== */
+const CFG={
+  price:"1 990",              // цена
+  oldPrice:"15 000 ₽",        // зачёркнутая цена
+  bank:"Сбербанк",
+  card:"2202 2085 5582 7717", // номер карты
+  holder:"Rahmonov M.",       // получатель
+  sbpPhone:"",                // телефон для СБП, например "+7 900 000-00-00" (пусто = блок скрыт)
+  instagram:"format_razuma"   // ник Instagram без @
+};
+/* ======================================= */
+document.querySelectorAll('#now,#now2').forEach(e=>e.textContent=CFG.price);
+document.getElementById('old').textContent=CFG.oldPrice;
+document.getElementById('bank').textContent=CFG.bank;
+document.getElementById('cnum').textContent=CFG.card;
+document.getElementById('holder').textContent='Получатель: '+CFG.holder;
+document.getElementById('ig').href='https://ig.me/m/'+CFG.instagram;
+document.getElementById('igf').href='https://instagram.com/'+CFG.instagram;
+if(CFG.sbpPhone){document.getElementById('sbp').style.display='block';document.getElementById('sbpn').textContent=CFG.sbpPhone}
+function copy(btn,text,label){
+  const done=()=>{btn.classList.add('ok');btn.textContent='Скопировано ✓';setTimeout(()=>{btn.classList.remove('ok');btn.textContent=label},2200)};
+  if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(text).then(done,()=>fallback())}else fallback();
+  function fallback(){const t=document.createElement('textarea');t.value=text;t.style.position='fixed';t.style.opacity='0';document.body.appendChild(t);t.select();try{document.execCommand('copy');done()}catch(e){}t.remove()}
+}
+document.getElementById('copy').onclick=e=>copy(e.target,CFG.card.replace(/\s/g,''),'Скопировать номер');
+document.getElementById('copy2').onclick=e=>copy(e.target,CFG.sbpPhone.replace(/[^\d+]/g,''),'Скопировать телефон');
+
+/* tabs */
+const tabs=[...document.querySelectorAll('.tab')],panes=[...document.querySelectorAll('.pane')];
+tabs.forEach((t,i)=>t.onclick=()=>{tabs.forEach(x=>x.classList.remove('on'));panes.forEach(x=>x.classList.remove('on'));t.classList.add('on');panes[i].classList.add('on');panes[i].classList.add('in')});
+
+/* example videos: tap to play with sound */
+document.querySelectorAll('.reel').forEach(r=>{
+  const v=r.querySelector('video'),s=r.querySelector('.snd');
+  r.onclick=()=>{
+    document.querySelectorAll('.reel video').forEach(o=>{if(o!==v){o.pause();o.muted=true;o.closest('.reel').querySelector('.snd').textContent='▶ нажми'}});
+    if(v.paused||v.muted){v.muted=false;v.play();s.textContent='❚❚ пауза'}else{v.pause();s.textContent='▶ нажми'}
+  };
+});
+
+/* calc */
+const n=document.getElementById('n'),pr=document.getElementById('pr');
+const fmt=x=>x.toLocaleString('ru-RU');
+function calc(){const N=+n.value,P=+pr.value;document.getElementById('vN').textContent=N;document.getElementById('vP').textContent=fmt(P);
+  document.getElementById('sum').innerHTML=fmt(N*P)+' <i>₽</i>';
+  const k=Math.ceil(1990/P);document.getElementById('pb').textContent=k<=1?'Методичка окупается с первого заказа.':'Методичка окупается с '+k+'-го заказа.'}
+n.oninput=pr.oninput=calc;calc();
+
+/* chronos grid */
+const g=document.getElementById('g');for(let i=0;i<78;i++){const b=document.createElement('b');if(i<34)b.className='on';if(i===52)b.className='e';g.appendChild(b)}
+
+/* reveal */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
