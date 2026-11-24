@@ -465,8 +465,8 @@ footer .row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;m
           <p class="sm">Так я сразу найду твой платёж.</p></div></div>
         <div class="step"><span class="sn">03</span><div><h3>Сделай скрин или сохрани чек</h3><p class="sm">На нём должны быть видны сумма и время перевода.</p></div></div>
         <div class="step"><span class="sn">04</span><div><h3>Открой директ и отправь скрин</h3><p class="sm">Пришлю методичку и 10 стилей прямо в директ Instagram. Пришёл по кодовому слову — ответь скрином в той же переписке.</p></div></div>
-        <a class="btn full" id="ig" href="https://ig.me/m/hustlenull" target="_blank" rel="noopener">Открыть директ<span class="arrow">→</span></a>
-        <p class="sm" style="margin-top:10px">Отвечаю вручную, обычно в течение нескольких часов.</p>
+        <a class="btn full" id="ig" href="https://www.instagram.com/hustlenull/" target="_blank" rel="noopener">Открыть @hustlenull<span class="arrow">→</span></a>
+        <p class="sm" style="margin-top:10px">Откроется профиль — нажми «Отправить сообщение». Отвечаю вручную, обычно в течение нескольких часов.</p>
       </div>
     </div>
   </div>
@@ -514,7 +514,7 @@ const CFG={
 document.querySelectorAll('#now,#now2').forEach(e=>e.textContent=CFG.price);
 document.getElementById('old').textContent=CFG.oldPrice;
 document.getElementById('wtxt').textContent=CFG.comment;
-document.getElementById('ig').href='https://ig.me/m/'+CFG.instagram;
+document.getElementById('ig').href='https://www.instagram.com/'+CFG.instagram+'/';
 document.getElementById('igf').href='https://instagram.com/'+CFG.instagram;
 function copy(btn,text,label,cb){
   const done=()=>{btn.classList.add('ok');if(label)btn.textContent='Скопировано ✓';setTimeout(()=>{btn.classList.remove('ok');if(label)btn.textContent=label},2200)};
